@@ -1,0 +1,151 @@
+/* World news poster, Tuesday 24 November 2026.
+   One 1024x1024 sheet: navy masthead, five story rows, navy footer.
+   Everything is drawn with CSS and inline SVG; no outside images. */
+
+:root {
+  --navy: #14213d;
+  --gold: #c9a227;
+  --paper: #f6f1e7;
+  --ink: #1a1a1a;
+  --body: #33302a;
+  --rule: #d8d0bd;
+  --faint: #8a8371;
+  --mist: #d7dce6;
+  --cream: #e8e4d8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 1024px;
+  height: 1024px;
+  overflow: hidden;
+  background: var(--paper);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--ink);
+}
+
+.sheet {
+  width: 1024px;
+  height: 1024px;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- masthead ---------- */
+
+.top {
+  flex: 0 0 148px;
+  background: var(--navy);
+  color: #fff;
+  padding: 22px 38px 0 38px;
+  border-bottom: 5px solid var(--gold);
+}
+
+.kicker {
+  font-size: 15px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.date {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 56px;
+  line-height: 1.06;
+  font-weight: 700;
+  margin-top: 7px;
+}
+
+.lede {
+  font-size: 16px;
+  color: var(--mist);
+  margin-top: 5px;
+}
+
+/* ---------- story rows ---------- */
+
+.items {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  padding: 0 34px;
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+}
+
+.item:last-child { border-bottom: none; }
+
+.badge {
+  flex: 0 0 82px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: var(--c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 24px;
+}
+
+.badge svg {
+  width: 46px;
+  height: 46px;
+}
+
+.copy { flex: 1; }
+
+.label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--c);
+  margin-bottom: 6px;
+}
+
+.headline {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 26px;
+  line-height: 1.16;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.deck {
+  font-size: 16px;
+  line-height: 1.36;
+  color: var(--body);
+}
+
+.credit {
+  position: absolute;
+  right: 34px;
+  bottom: 11px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ---------- footer ---------- */
+
+.base {
+  flex: 0 0 52px;
+  background: var(--navy);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}
